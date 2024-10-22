@@ -1,19 +1,22 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import br.com.company.screenmatch.model.Movie;
+
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         Movie movie = new Movie();
-        movie.name = "Joker";
-        movie.launchYear = 2019;
-        movie.timeInMinutes = 140;
+        movie.setName("Joker");
+        movie.setLaunchYear(2019);
+        movie.setTimeInMinutes(140);
 
         movie.showRecord();
-        movie.rate(8);
-        movie.rate(5);
-        movie.rate(10);
-        System.out.println(movie.sumOfRatings);
-        System.out.println(movie.totalAvaliation);
-        System.out.println(movie.averageGrades());
+        System.out.println("Informe as avaliações:");
+        movie.rate(sc.nextDouble());
+        movie.rate(sc.nextDouble());
+        movie.rate(sc.nextDouble());
+        System.out.println("Total de avaliações: " + movie.getTotalAvaliation());
+        System.out.printf("Media de avaliações: %.2f\n", movie.averageGrades());
 
     }
 }
