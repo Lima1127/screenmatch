@@ -15,6 +15,6 @@ public class Movie extends Title implements Classifiable {
 
     @Override
     public int getClassificacao() {
-        return 0;
+        return (int) averageGrades() / 2;
     }
 }

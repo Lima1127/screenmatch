@@ -1,4 +1,6 @@
+import br.com.company.screenmatch.calculation.ClassificationFilter;
 import br.com.company.screenmatch.calculation.TimeCalculator;
+import br.com.company.screenmatch.model.Episodes;
 import br.com.company.screenmatch.model.Movie;
 import br.com.company.screenmatch.model.Serie;
 
@@ -39,6 +41,15 @@ public class Main {
         timeCalculator.insert(movie1);
         timeCalculator.insert(serie);
         System.out.println(timeCalculator.getTotalTime());
+
+        ClassificationFilter filter = new ClassificationFilter();
+        filter.filters(movie);
+
+        Episodes episodes = new Episodes();
+        episodes.setNumber(1);
+        episodes.setSerie(serie);
+        episodes.setTotalViews(300);
+        filter.filters(episodes);
 
 
     }
