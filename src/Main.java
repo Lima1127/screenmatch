@@ -4,6 +4,7 @@ import br.com.company.screenmatch.model.Episodes;
 import br.com.company.screenmatch.model.Movie;
 import br.com.company.screenmatch.model.Serie;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -11,6 +12,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Movie movie = new Movie();
         Movie movie1 = new Movie();
+        Movie movieDuarte = new Movie();
         Serie serie = new Serie();
         TimeCalculator timeCalculator = new TimeCalculator();
         movie.setName("Joker");
@@ -51,6 +53,15 @@ public class Main {
         episodes.setTotalViews(300);
         filter.filters(episodes);
 
+        movieDuarte.setName("SAO Ordinal Scale ");
+        movieDuarte.setLaunchYear(2017);
+        movieDuarte.setTimeInMinutes(110);
 
+        ArrayList<Movie> moviesList = new ArrayList<>();
+        moviesList.add(movieDuarte);
+        moviesList.add(movie);
+        moviesList.add(movie1);
+        System.out.println("List Size: " + moviesList.size());
+        System.out.println("First Movie: " + moviesList.getFirst().getName());
     }
 }
