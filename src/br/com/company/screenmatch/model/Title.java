@@ -6,6 +6,11 @@ public class Title {
     private boolean inThePlan;
     private double sumOfRatings;
 
+    public Title(String name, int launchYear) {
+        this.name = name;
+        this.launchYear = launchYear;
+    }
+
     public String getName() {
         return name;
     }

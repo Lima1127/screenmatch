@@ -10,13 +10,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Movie movie = new Movie();
-        Movie movie1 = new Movie();
-        Movie movieDuarte = new Movie();
-        Serie serie = new Serie();
+        Movie movie = new Movie("Joker", 2019);
+        Movie movie1 = new Movie("Venom", 2019);
+        Movie movieDuarte = new Movie("SAO Ordinale Scale", 2017);
+        Serie serie = new Serie("ReZero", 2016);
         TimeCalculator timeCalculator = new TimeCalculator();
-        movie.setName("Joker");
-        movie.setLaunchYear(2019);
         movie.setTimeInMinutes(140);
 
         movie.showRecord();
@@ -27,16 +25,12 @@ public class Main {
         System.out.println("Total de avaliações: " + movie.getTotalAvaliation());
         System.out.printf("Media de avaliações: %.2f\n\n", movie.averageGrades());
 
-        serie.setName("ReZero");
-        serie.setLaunchYear(2016);
         serie.showRecord();
         serie.setSeasons(2);
         serie.setEpisodesForSeason(26);
         serie.setMinutesForEpisodes(24);
         System.out.println("Duração total de ReZero: " + serie.getTimeInMinutes());
 
-        movie1.setName("Venom");
-        movie1.setLaunchYear(2019);
         movie1.setTimeInMinutes(160);
 
         timeCalculator.insert(movie);
@@ -53,8 +47,6 @@ public class Main {
         episodes.setTotalViews(300);
         filter.filters(episodes);
 
-        movieDuarte.setName("SAO Ordinal Scale ");
-        movieDuarte.setLaunchYear(2017);
         movieDuarte.setTimeInMinutes(110);
 
         ArrayList<Movie> moviesList = new ArrayList<>();
@@ -63,5 +55,6 @@ public class Main {
         moviesList.add(movie1);
         System.out.println("List Size: " + moviesList.size());
         System.out.println("First Movie: " + moviesList.getFirst().getName());
+        System.out.println(moviesList);
     }
 }
