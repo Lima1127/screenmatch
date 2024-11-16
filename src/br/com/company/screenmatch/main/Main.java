@@ -1,3 +1,5 @@
+package br.com.company.screenmatch.main;
+
 import br.com.company.screenmatch.calculation.ClassificationFilter;
 import br.com.company.screenmatch.calculation.TimeCalculator;
 import br.com.company.screenmatch.model.Episodes;
@@ -5,6 +7,8 @@ import br.com.company.screenmatch.model.Movie;
 import br.com.company.screenmatch.model.Serie;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
@@ -56,5 +60,6 @@ public class Main {
         System.out.println("List Size: " + moviesList.size());
         System.out.println("First Movie: " + moviesList.getFirst().getName());
         System.out.println(moviesList);
+
     }
 }

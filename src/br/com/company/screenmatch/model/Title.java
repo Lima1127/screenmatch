@@ -1,6 +1,6 @@
 package br.com.company.screenmatch.model;
 
-public class Title {
+public class Title implements Comparable<Title> {
     private String name;
     private int launchYear,timeInMinutes, totalAvaliation;
     private boolean inThePlan;
@@ -59,5 +59,10 @@ public class Title {
 
     public double averageGrades(){
         return sumOfRatings / totalAvaliation;
+    }
+
+    @Override
+    public int compareTo(Title anotherTitle) {
+        return this.getName().compareTo(anotherTitle.getName());
     }
 }
