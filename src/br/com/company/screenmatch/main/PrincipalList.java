@@ -4,10 +4,7 @@ import br.com.company.screenmatch.model.Movie;
 import br.com.company.screenmatch.model.Serie;
 import br.com.company.screenmatch.model.Title;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class PrincipalList {
     public static void main(String[] args) {
@@ -19,7 +16,7 @@ public class PrincipalList {
         movieDuarte.rate(6);
         Serie serie = new Serie("ReZero", 2016);
 
-        List<Title> list = new ArrayList<>();
+        List<Title> list = new LinkedList<>();
         list.add(movieDuarte);
         list.add(movie);
         list.add(movie1);
@@ -33,7 +30,7 @@ public class PrincipalList {
 
         System.out.println("Ordenando títulos");
         Collections.sort(list);
-        System.out.println();
+        System.out.println(list);
         System.out.println("Ordenando ano");
         list.sort(Comparator.comparing(Title::getLaunchYear));
         System.out.println(list);
