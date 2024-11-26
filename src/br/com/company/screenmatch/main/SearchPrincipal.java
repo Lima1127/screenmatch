@@ -22,6 +22,7 @@ public class SearchPrincipal {
         HttpResponse<String> response = client
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
+        System.out.println("Resposta");
         System.out.println(response.body());
     }
 }
